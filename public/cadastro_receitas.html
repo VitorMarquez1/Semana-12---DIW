@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Receitas</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> <style>
+        /* Adicionando alguns estilos básicos para a página de cadastros */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #dee2e6;
+        }
+        #logo-container img {
+            max-height: 50px;
+        }
+        nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+        }
+        .form-container, .table-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        button[type="submit"], .btn-action {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button[type="submit"]:hover, .btn-action:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .actions-column button {
+            margin-right: 5px;
+            padding: 5px 8px;
+        }
+        .btn-edit {
+            background-color: #ffc107;
+            color: #333;
+        }
+        .btn-edit:hover {
+            background-color: #e0a800;
+        }
+        .btn-delete {
+            background-color: #dc3545;
+            color: white;
+        }
+        .btn-delete:hover {
+            background-color: #c82333;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="imagens/logo.jpg" alt="Logo do Site">
+        </div>
+        <nav>
+            <a href="index.html">Página Inicial</a>
+            </nav>
+    </header>
+
+    <main>
+        <h1>Cadastro de Nova Receita</h1>
+
+        <section class="form-container">
+            <h2>Formulário de Cadastro</h2>
+            <form id="formCadastroReceita">
+                <div class="form-group">
+                    <label for="nome">Nome da Receita:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao_breve">Descrição Breve:</label>
+                    <textarea id="descricao_breve" name="descricao_breve" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="ingredientes">Ingredientes (um por linha):</label>
+                    <textarea id="ingredientes" name="ingredientes" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="preparo">Modo de Preparo:</label>
+                    <textarea id="preparo" name="preparo" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="tempo_preparo">Tempo de Preparo (ex: 45 minutos):</label>
+                    <input type="text" id="tempo_preparo" name="tempo_preparo">
+                </div>
+
+                <div class="form-group">
+                    <label for="rendimento">Rendimento (ex: 8 porções):</label>
+                    <input type="text" id="rendimento" name="rendimento">
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoria (ex: Bolos, Massas, Saladas):</label>
+                    <input type="text" id="categoria" name="categoria" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="destaque" name="destaque" value="true">
+                    <label for="destaque" style="display: inline; font-weight: normal;">Marcar como destaque?</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="imagem_principal">URL da Imagem Principal:</label>
+                    <input type="url" id="imagem_principal" name="imagem_principal" placeholder="https://example.com/imagem.jpg">
+                </div>
+
+                <fieldset>
+                    <legend>Fotos Adicionais (Opcional)</legend>
+                    <div class="form-group">
+                        <label for="foto_adicional_1_titulo">Título da Foto Adicional 1:</label>
+                        <input type="text" id="foto_adicional_1_titulo" name="foto_adicional_1_titulo">
+                        <label for="foto_adicional_1_src">URL da Foto Adicional 1:</label>
+                        <input type="url" id="foto_adicional_1_src" name="foto_adicional_1_src" placeholder="https://example.com/foto1.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label for="foto_adicional_2_titulo">Título da Foto Adicional 2:</label>
+                        <input type="text" id="foto_adicional_2_titulo" name="foto_adicional_2_titulo">
+                        <label for="foto_adicional_2_src">URL da Foto Adicional 2:</label>
+                        <input type="url" id="foto_adicional_2_src" name="foto_adicional_2_src" placeholder="https://example.com/foto2.jpg">
+                    </div>
+                </fieldset>
+
+                <button type="submit">Cadastrar Receita</button>
+            </form>
+        </section>
+
+        <section class="table-container">
+            <h2>Receitas Cadastradas</h2>
+            <table id="tabelaReceitas">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Tempo de Preparo</th>
+                        <th>Destaque</th>
+                        <th class="actions-column">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" style="text-align:center;">Nenhuma receita cadastrada ainda.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Site criado por Vitor Marquez.</p> </footer>
+
+    </body>
+</html>

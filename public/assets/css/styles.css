@@ -1,0 +1,154 @@
+/* Estilos gerais do site */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Cor de fundo do cabeçalho */
+}
+
+#logo-container img {
+    max-height: 50px; /* Ajuste a altura máxima do logo */
+}
+
+#busca-container {
+    display: flex;
+}
+
+#busca-container input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+#busca-container button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+#categorias-nav {
+    padding: 10px 20px;
+    text-align: left; /* Alinha o botão à esquerda como no wireframe */
+}
+
+#categorias-nav button {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+main {
+    padding: 20px;
+}
+
+#destaques h2,
+#receitas h2 {
+    margin-bottom: 15px;
+}
+
+#carousel-container {
+    position: relative; /* Para posicionar os controles */
+    overflow: hidden; /* Esconde itens que excedem a largura */
+    margin-bottom: 20px;
+}
+
+#carouselInner {
+    display: flex;
+    overflow-x: auto; /* Permite rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Para o scroll parar em cada item */
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 80%; /* Ajuste a largura dos itens do carrossel */
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    border-radius: 8px;
+    scroll-snap-align: start;
+    text-align: center;
+}
+
+.carousel-item img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#carousel-controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#destaques #carousel-controls button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+#receitas #gridReceitas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cria um grid responsivo */
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 150px; /* Ajuste a altura das imagens na grade */
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+    height: 40px; /* Altura fixa para descrições */
+    overflow: hidden;
+}
+
+.card-body a.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Adicione outros estilos personalizados conforme necessário */
