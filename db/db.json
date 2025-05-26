@@ -2,51 +2,298 @@
   "receitas": [
     {
       "id": 1,
-      "nome": "Bolo de Cenoura com Cobertura de Chocolate",
-      "descricao_breve": "Um clássico delicioso e fofinho.",
-      "ingredientes": ["3 cenouras médias", "4 ovos", "1 xícara de óleo", "2 xícaras de açúcar", "2 xícaras de farinha de trigo", "1 colher de sopa de fermento em pó"],
-      "preparo": "Bata no liquidificador as cenouras, os ovos e o óleo. Em uma tigela, misture o açúcar e a farinha. Adicione a mistura do liquidificador e o fermento. Asse em forno pré-aquecido.",
-      "tempo_preparo": "40 minutos",
+      "nome": "Bolo de Cenoura com Cobertura de Chocolate Especial",
+      "descricao_breve": "Um clássico delicioso, fofinho e agora em destaque!",
+      "descricao_completa": "Este bolo de cenoura é uma receita tradicional que agrada a todos. A massa fofinha e a cobertura cremosa de chocolate formam uma combinação irresistível. Ideal para servir em lanches, festas ou como sobremesa.",
+      "ingredientes": [
+        "3 cenouras médias raladas",
+        "4 ovos",
+        "1 xícara de chá de óleo",
+        "2 xícaras de chá de açúcar",
+        "2 xícaras de chá de farinha de trigo",
+        "1 colher de sopa de fermento em pó",
+        "Para a cobertura:",
+        "1 lata de leite condensado",
+        "1 colher de sopa de manteiga",
+        "3 colheres de sopa de chocolate em pó",
+        "Chocolate granulado para decorar"
+      ],
+      "preparo": "No liquidificador, bata as cenouras, os ovos e o óleo. Em uma tigela, misture o açúcar e a farinha. Despeje a mistura do liquidificador na tigela e adicione o fermento, misturando delicadamente. Asse em forma untada e enfarinhada, em forno médio (180°C) pré-aquecido, por cerca de 40 minutos. Para a cobertura, leve todos os ingredientes ao fogo baixo, mexendo sempre, até desgrudar do fundo da panela. Cubra o bolo ainda morno e decore com granulado.",
+      "tempo_preparo": "60 minutos",
       "rendimento": "12 porções",
       "categoria": "Bolos",
+      "tags": [
+        "bolo",
+        "cenoura",
+        "chocolate",
+        "lanche",
+        "especial"
+      ],
+      "rating": {
+        "value": 4.8,
+        "count": 255
+      },
       "destaque": true,
       "imagem_principal": "imagens/bolo_cenoura.jpg",
       "fotos_adicionais": [
-        { "titulo": "Bolo pronto", "src": "imagens/bolo_cenoura_fatia.jpg" },
-        { "titulo": "Ingredientes", "src": "imagens/ingredientes_bolo_cenoura.jpg" }
+        {
+          "titulo": "Bolo pronto",
+          "src": "imagens/bolo_cenoura_fatia.jpg"
+        },
+        {
+          "titulo": "Ingredientes",
+          "src": "imagens/ingredientes_bolo_cenoura.jpg"
+        }
       ]
     },
     {
       "id": 2,
       "nome": "Lasanha à Bolonhesa",
-      "descricao_breve": "Uma receita tradicional e reconfortante.",
-      "ingredientes": ["Massa para lasanha", "Carne moída", "Molho de tomate", "Queijo muçarela", "Cebola", "Alho", "Azeite"],
-      "preparo": "Refogue a carne moída com cebola e alho, adicione o molho de tomate. Monte a lasanha intercalando massa, molho e queijo. Leve ao forno para gratinar.",
-      "tempo_preparo": "1 hora",
+      "descricao_breve": "Uma receita tradicional italiana, rica e reconfortante.",
+      "descricao_completa": "A lasanha à bolonhesa é um prato clássico da culinária italiana, perfeito para um almoço de domingo em família. Camadas de massa, molho à bolonhesa suculento e queijo derretido formam uma combinação deliciosa e satisfatória.",
+      "ingredientes": [
+        "500g de massa para lasanha pré-cozida",
+        "500g de carne moída",
+        "2 latas de molho de tomate pronto",
+        "400g de queijo muçarela fatiado",
+        "200g de presunto fatiado",
+        "1 cebola picada",
+        "2 dentes de alho picados",
+        "Azeite a gosto",
+        "Sal e pimenta do reino a gosto",
+        "Queijo parmesão ralado para polvilhar"
+      ],
+      "preparo": "Em uma panela, aqueça o azeite e refogue a cebola e o alho. Adicione a carne moída e cozinhe até dourar. Junte o molho de tomate, tempere com sal e pimenta e cozinhe por cerca de 15 minutos. Em um refratário, monte a lasanha: intercale camadas de molho à bolonhesa, massa, presunto e muçarela. Finalize com uma camada de molho e polvilhe queijo parmesão. Leve ao forno pré-aquecido a 180°C por cerca de 30 minutos ou até gratinar.",
+      "tempo_preparo": "90 minutos",
       "rendimento": "8 porções",
       "categoria": "Massas",
+      "tags": [
+        "lasanha",
+        "massa",
+        "italiana",
+        "carne"
+      ],
+      "rating": {
+        "value": 4.9,
+        "count": 320
+      },
       "destaque": true,
       "imagem_principal": "imagens/lasanha.jpg",
       "fotos_adicionais": [
-        { "titulo": "Lasanha montada", "src": "imagens/lasanha_montada.jpg" },
-        { "titulo": "Molho bolonhesa", "src": "imagens/molho_bolonhesa.jpg" }
+        {
+          "titulo": "Lasanha montada",
+          "src": "imagens/lasanha_montada.jpg"
+        },
+        {
+          "titulo": "Molho bolonhesa",
+          "src": "imagens/molho_bolonhesa.jpg"
+        }
       ]
     },
     {
       "id": 3,
       "nome": "Salada Caprese",
-      "descricao_breve": "Simples, fresca e deliciosa.",
-      "ingredientes": ["Tomate", "Mussarela de búfala", "Manjericão fresco", "Azeite extra virgem", "Sal", "Pimenta do reino"],
-      "preparo": "Corte os tomates e a mussarela em rodelas. Monte em um prato alternando tomate, mussarela e folhas de manjericão. Regue com azeite e tempere com sal e pimenta.",
-      "tempo_preparo": "10 minutos",
+      "descricao_breve": "Simples, fresca e cheia de sabor mediterrâneo.",
+      "descricao_completa": "A salada Caprese é uma opção leve e refrescante, perfeita para os dias mais quentes. Com apenas alguns ingredientes de qualidade, você terá uma explosão de sabores.",
+      "ingredientes": [
+        "3 tomates italianos maduros",
+        "200g de mussarela de búfala fresca",
+        "Folhas de manjericão fresco a gosto",
+        "Azeite extra virgem a gosto",
+        "Sal e pimenta do reino moída na hora a gosto",
+        "Opcional: Redução de aceto balsâmico"
+      ],
+      "preparo": "Lave bem os tomates e o manjericão. Corte os tomates e a mussarela de búfala em rodelas de aproximadamente 0,5 cm de espessura. Em um prato ou travessa, intercale as rodelas de tomate e mussarela. Distribua as folhas de manjericão por cima. Regue generosamente com azeite extra virgem. Tempere com sal e pimenta do reino a gosto. Se desejar, finalize com um fio de redução de aceto balsâmico.",
+      "tempo_preparo": "15 minutos",
       "rendimento": "2 porções",
       "categoria": "Saladas",
+      "tags": [
+        "salada",
+        "caprese",
+        "italiana",
+        "leve",
+        "verão"
+      ],
+      "rating": {
+        "value": 4.5,
+        "count": 150
+      },
       "destaque": false,
       "imagem_principal": "imagens/salada_caprese.jpg",
       "fotos_adicionais": [
-        { "titulo": "Salada pronta", "src": "imagens/salada_pronta.jpg" },
-        { "titulo": "Ingredientes", "src": "imagens/ingredientes_salada.jpg" }
+        {
+          "titulo": "Salada pronta",
+          "src": "imagens/salada_pronta.jpg"
+        },
+        {
+          "titulo": "Ingredientes frescos",
+          "src": "imagens/ingredientes_salada.jpg"
+        }
       ]
+    },
+    {
+      "id": 4,
+      "nome": "Feijoada Completa",
+      "descricao_breve": "O prato mais emblemático da culinária brasileira.",
+      "descricao_completa": "Uma feijoada completa, rica em sabores e tradição. Perfeita para reunir a família e amigos em um almoço especial. Servida com arroz branco, couve refogada, farofa e laranja.",
+      "ingredientes": [
+        "500g de feijão preto",
+        "200g de carne seca dessalgada",
+        "200g de costelinha de porco salgada",
+        "100g de lombo de porco salgado",
+        "1 paio",
+        "1 linguiça calabresa",
+        "100g de bacon em cubos",
+        "2 cebolas grandes picadas",
+        "4 dentes de alho amassados",
+        "2 folhas de louro",
+        "Sal e pimenta do reino a gosto",
+        "Laranja, couve refogada e farofa para acompanhar"
+      ],
+      "preparo": "Deixe o feijão e as carnes salgadas de molho de véspera, trocando a água algumas vezes. Cozinhe o feijão com as carnes (exceto paio, linguiça e bacon) e as folhas de louro na panela de pressão por cerca de 40 minutos após pegar pressão. Em outra panela, frite o bacon. Retire e reserve. Na mesma gordura, doure a cebola e o alho. Adicione o paio e a calabresa em rodelas e frite um pouco. Junte este refogado ao feijão cozido, adicione o bacon reservado e cozinhe em fogo baixo por mais 30 minutos para apurar o sabor. Acerte o sal e a pimenta. Sirva com arroz branco, couve refogada, farofa e fatias de laranja.",
+      "tempo_preparo": "3 horas (mais o tempo de molho)",
+      "rendimento": "10 porções",
+      "categoria": "Pratos Principais",
+      "tags": [
+        "feijoada",
+        "brasileira",
+        "tradicional",
+        "porco"
+      ],
+      "rating": {
+        "value": 4.9,
+        "count": 400
+      },
+      "destaque": true,
+      "imagem_principal": "imagens/feijoada.jpg",
+      "fotos_adicionais": []
+    },
+    {
+      "id": 5,
+      "nome": "Moqueca Baiana",
+      "descricao_breve": "Um prato vibrante e aromático da Bahia.",
+      "descricao_completa": "A moqueca baiana é um cozido de peixe delicioso, preparado com azeite de dendê, leite de coco, pimentões e coentro, que conferem um sabor único e marcante.",
+      "ingredientes": [
+        "1 kg de peixe branco firme (robalo, badejo) em postas",
+        "Suco de 1 limão",
+        "2 dentes de alho amassados",
+        "Sal e pimenta do reino a gosto",
+        "1 cebola grande em rodelas",
+        "1 pimentão vermelho em rodelas",
+        "1 pimentão amarelo em rodelas",
+        "2 tomates maduros em rodelas",
+        "1/2 xícara de chá de coentro picado",
+        "1/2 xícara de chá de cebolinha picada",
+        "200 ml de leite de coco",
+        "2 colheres de sopa de azeite de dendê"
+      ],
+      "preparo": "Tempere as postas de peixe com o suco de limão, alho, sal e pimenta. Deixe marinar por 30 minutos. Em uma panela de barro ou de fundo grosso, faça camadas alternadas de cebola, pimentões, tomates e as postas de peixe. Salpique coentro e cebolinha entre as camadas. Regue com o leite de coco e o azeite de dendê. Cozinhe em fogo médio, com a panela semi-tampada, por cerca de 20-25 minutos, ou até o peixe estar cozido e o molho encorpado. Não mexa muito para não desmanchar o peixe. Sirva com arroz branco e pirão.",
+      "tempo_preparo": "60 minutos",
+      "rendimento": "6 porções",
+      "categoria": "Frutos do Mar",
+      "tags": [
+        "moqueca",
+        "baiana",
+        "peixe",
+        "dendê",
+        "leite de coco"
+      ],
+      "rating": {
+        "value": 4.7,
+        "count": 180
+      },
+      "destaque": false,
+      "imagem_principal": "imagens/moqueca.jpg",
+      "fotos_adicionais": []
+    },
+    {
+      "id": 6,
+      "nome": "Pão de Queijo Mineiro",
+      "descricao_breve": "Delícia crocante por fora e macia por dentro.",
+      "descricao_completa": "O autêntico pão de queijo mineiro, perfeito para o café da manhã ou lanche da tarde. Uma receita simples que resulta em pãezinhos dourados e saborosos.",
+      "ingredientes": [
+        "500g de polvilho azedo",
+        "250 ml de leite integral",
+        "100 ml de óleo vegetal",
+        "1 colher de chá de sal",
+        "2 ovos grandes",
+        "250g de queijo minas padrão ralado (ou queijo parmesão)"
+      ],
+      "preparo": "Em uma panela, aqueça o leite, o óleo e o sal até ferver. Despeje essa mistura fervente sobre o polvilho azedo em uma tigela grande e misture bem com uma colher de pau até escaldar o polvilho (formar uma farofa úmida). Deixe amornar. Adicione os ovos, um a um, misturando bem após cada adição. Por último, acrescente o queijo ralado e sove a massa até ficar homogênea e desgrudar das mãos (se necessário, adicione um pouco mais de polvilho). Faça bolinhas do tamanho desejado e disponha em uma assadeira untada (não precisa espaçar muito). Asse em forno pré-aquecido a 180-200°C por cerca de 20-25 minutos, ou até dourarem. Sirva quente.",
+      "tempo_preparo": "50 minutos",
+      "rendimento": "Aproximadamente 30 pães de queijo",
+      "categoria": "Lanches",
+      "tags": [
+        "pão de queijo",
+        "mineiro",
+        "lanche",
+        "café"
+      ],
+      "rating": {
+        "value": 5,
+        "count": 500
+      },
+      "destaque": true,
+      "imagem_principal": "imagens/pao_de_queijo.jpg",
+      "fotos_adicionais": []
+    },
+    {
+      "id": 7,
+      "nome": "Brigadeiro Tradicional",
+      "descricao_breve": "O docinho brasileiro mais amado e fácil de fazer.",
+      "descricao_completa": "Brigadeiro é sinônimo de festa e alegria no Brasil. Esta receita simples e clássica resulta em um doce cremoso e delicioso, perfeito para todas as ocasiões.",
+      "ingredientes": [
+        "1 lata de leite condensado",
+        "1 colher de sopa de manteiga sem sal",
+        "4 colheres de sopa de chocolate em pó (não achocolatado)",
+        "Chocolate granulado para enrolar"
+      ],
+      "preparo": "Em uma panela, coloque o leite condensado, a manteiga e o chocolate em pó. Leve ao fogo baixo, mexendo continuamente com uma colher de pau ou espátula de silicone, raspando bem o fundo e as laterais da panela para não queimar. Cozinhe por cerca de 8-12 minutos, ou até o brigadeiro começar a desgrudar do fundo da panela (ponto de enrolar). Despeje o brigadeiro em um prato untado com manteiga e deixe esfriar completamente. Com as mãos untadas com manteiga, faça bolinhas e passe-as no chocolate granulado. Coloque em forminhas de papel.",
+      "tempo_preparo": "25 minutos (mais tempo para esfriar)",
+      "rendimento": "Aproximadamente 25 brigadeiros",
+      "categoria": "Sobremesas",
+      "tags": [
+        "brigadeiro",
+        "doce",
+        "festa",
+        "chocolate",
+        "brasileiro"
+      ],
+      "rating": {
+        "value": 4.9,
+        "count": 600
+      },
+      "destaque": false,
+      "imagem_principal": "imagens/brigadeiro.jpg",
+      "fotos_adicionais": []
+    },
+    {
+      "nome": "Mousse de Maracujá Fácil",
+      "descricao_breve": "Sobremesa rápida e deliciosa.",
+      "descricao_completa": "Uma mousse de maracujá aerada e com o equilíbrio perfeito entre o doce e o azedo. Muito fácil de preparar!",
+      "ingredientes": [
+        "1 lata de leite condensado",
+        "1 lata de creme de leite",
+        "1 xícara de suco de maracujá concentrado (sem açúcar)"
+      ],
+      "preparo": "Bata todos os ingredientes no liquidificador por aproximadamente 5 minutos. Despeje em taças individuais ou em um refratário. Leve à geladeira por pelo menos 2 horas antes de servir. Decore com polpa de maracujá fresca se desejar.",
+      "tempo_preparo": "15 minutos + 2 horas de geladeira",
+      "rendimento": "6 porções",
+      "categoria": "Sobremesas",
+      "tags": [
+        "mousse",
+        "maracujá",
+        "sobremesa",
+        "rápida"
+      ],
+      "rating": {
+        "value": 4.6,
+        "count": 95
+      },
+      "destaque": false,
+      "imagem_principal": "imagens/mousse_maracuja.jpg",
+      "fotos_adicionais": [],
+      "id": 9
     }
   ]
 }

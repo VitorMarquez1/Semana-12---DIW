@@ -4,44 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diretório de Receitas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div id="logo-container">
-            <img src="imagens/logo.jpg" alt="Logo do Site"> <!-- Adicione o caminho para o seu logo -->
+            <img src="imagens/logo.jpg" alt="Logo do Site">
         </div>
         <div id="busca-container">
             <input type="text" placeholder="Procurar receita">
-            <button type="submit">Buscar</button>
+            <button type="submit"><i class="fas fa-search"></i> Procurar</button>
         </div>
     </header>
-    <nav id="categorias-nav">
-        <button>Categorias</button>
-    </nav>
+
     <main>
         <section id="destaques">
             <h2>Receitas mais acessadas</h2>
-            <div id="carousel-container">
-                <div id="carouselInner">
-                    <!-- Conteúdo do carrossel será inserido aqui pelo JavaScript -->
+            <div id="carousel-featured-recipe">
                 </div>
-                <div id="carousel-controls">
-                    <button>Anterior</button>
-                    <button>Próximo</button>
-                </div>
-            </div>
         </section>
+
+        <nav id="categorias-nav">
+            <button>Categorias</button>
+        </nav>
+
         <section id="receitas">
             <h2>Todas as Receitas</h2>
             <div id="gridReceitas">
-                <!-- Conteúdo da grade de receitas será inserido aqui pelo JavaScript -->
-            </div>
+                </div>
         </section>
     </main>
+
     <footer>
         <p>Site criado por Vitor Marquez.</p>
     </footer>
-    <script src="app.js"></script>
+    <script src="assets/scripts/app.js"></script>
 </body>
 </html>
