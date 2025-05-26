@@ -230,4 +230,191 @@
         <p>Site criado por Vitor Marquez.</p> </footer>
 
     </body>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const formCadastro = document.getElementById('formCadastroReceita');
+        const tabelaReceitasBody = document.getElementById('tabelaReceitas').querySelector('tbody');
+        const API_URL = 'http://localhost:3000/receitas';
+        let editandoId = null; // Para rastrear se estamos editando uma receita
+
+        // Função para carregar e exibir receitas na tabela
+        async function carregarReceitas() {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) {
+                    throw new Error(`Erro HTTP! status: ${response.status}`);
+                }
+                const receitas = await response.json();
+
+                tabelaReceitasBody.innerHTML = ''; // Limpa a tabela antes de adicionar novas linhas
+
+                if (receitas.length === 0) {
+                    tabelaReceitasBody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Nenhuma receita cadastrada ainda.</td></tr>';
+                    return;
+                }
+
+                receitas.forEach(receita => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${receita.nome || 'N/A'}</td>
+                        <td>${receita.categoria || 'N/A'}</td>
+                        <td>${receita.tempo_preparo || 'N/A'}</td>
+                        <td>${receita.destaque ? 'Sim' : 'Não'}</td>
+                        <td class="actions-column">
+                            <button class="btn-action btn-edit" data-id="${receita.id}">Editar</button>
+                            <button class="btn-action btn-delete" data-id="${receita.id}">Excluir</button>
+                        </td>
+                    `;
+                    tabelaReceitasBody.appendChild(tr);
+                });
+            } catch (error) {
+                console.error('Erro ao carregar receitas:', error);
+                tabelaReceitasBody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Erro ao carregar receitas. Tente novamente mais tarde.</td></tr>';
+            }
+        }
+
+        // Função para processar o formulário (Adicionar ou Editar)
+        formCadastro.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(formCadastro);
+            const receitaData = {
+                nome: formData.get('nome'),
+                descricao_breve: formData.get('descricao_breve'),
+                // Tratar ingredientes como array
+                ingredientes: formData.get('ingredientes').split('\n').map(item => item.trim()).filter(item => item),
+                preparo: formData.get('preparo'),
+                tempo_preparo: formData.get('tempo_preparo'),
+                rendimento: formData.get('rendimento'),
+                categoria: formData.get('categoria'),
+                destaque: formData.get('destaque') === 'true', // Converter para booleano
+                imagem_principal: formData.get('imagem_principal') || '',
+                fotos_adicionais: [] // Simplificado por agora, pode ser expandido
+            };
+
+            // Adiciona fotos adicionais se preenchidas
+            const foto1Titulo = formData.get('foto_adicional_1_titulo');
+            const foto1Src = formData.get('foto_adicional_1_src');
+            if (foto1Titulo && foto1Src) {
+                receitaData.fotos_adicionais.push({ titulo: foto1Titulo, src: foto1Src });
+            }
+            const foto2Titulo = formData.get('foto_adicional_2_titulo');
+            const foto2Src = formData.get('foto_adicional_2_src');
+            if (foto2Titulo && foto2Src) {
+                receitaData.fotos_adicionais.push({ titulo: foto2Titulo, src: foto2Src });
+            }
+
+
+            try {
+                let response;
+                let method;
+
+                if (editandoId) {
+                    // Modo Edição (PUT)
+                    method = 'PUT';
+                    response = await fetch(`${API_URL}/${editandoId}`, {
+                        method: method,
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(receitaData),
+                    });
+                } else {
+                    // Modo Adição (POST)
+                    method = 'POST';
+                    response = await fetch(API_URL, {
+                        method: method,
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(receitaData),
+                    });
+                }
+
+                if (!response.ok) {
+                    const errorData = await response.text();
+                    throw new Error(`Erro HTTP! status: ${response.status}, corpo: ${errorData}`);
+                }
+
+                const resultado = await response.json();
+                alert(`Receita ${editandoId ? 'atualizada' : 'cadastrada'} com sucesso! ID: ${resultado.id}`);
+
+                formCadastro.reset(); // Limpa o formulário
+                editandoId = null; // Reseta o modo de edição
+                formCadastro.querySelector('button[type="submit"]').textContent = 'Cadastrar Receita'; // Restaura o texto do botão
+                await carregarReceitas(); // Recarrega a lista de receitas
+
+            } catch (error) {
+                console.error(`Erro ao ${editandoId ? 'atualizar' : 'cadastrar'} receita:`, error);
+                alert(`Ocorreu um erro ao ${editandoId ? 'atualizar' : 'cadastrar'} a receita. Verifique o console para mais detalhes.`);
+            }
+        });
+
+        // Função para lidar com cliques nos botões de Ação (Editar/Excluir)
+        tabelaReceitasBody.addEventListener('click', async (event) => {
+            const target = event.target;
+            const receitaId = target.dataset.id;
+
+            if (target.classList.contains('btn-edit') && receitaId) {
+                // Ação de Editar
+                try {
+                    const response = await fetch(`${API_URL}/${receitaId}`);
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP! status: ${response.status}`);
+                    }
+                    const receita = await response.json();
+
+                    // Preenche o formulário com os dados da receita
+                    formCadastro.elements['nome'].value = receita.nome || '';
+                    formCadastro.elements['descricao_breve'].value = receita.descricao_breve || '';
+                    formCadastro.elements['ingredientes'].value = receita.ingredientes ? receita.ingredientes.join('\n') : '';
+                    formCadastro.elements['preparo'].value = receita.preparo || '';
+                    formCadastro.elements['tempo_preparo'].value = receita.tempo_preparo || '';
+                    formCadastro.elements['rendimento'].value = receita.rendimento || '';
+                    formCadastro.elements['categoria'].value = receita.categoria || '';
+                    formCadastro.elements['destaque'].checked = receita.destaque || false;
+                    formCadastro.elements['imagem_principal'].value = receita.imagem_principal || '';
+
+                    // Limpa e preenche fotos adicionais (simplificado para 2)
+                    formCadastro.elements['foto_adicional_1_titulo'].value = receita.fotos_adicionais?.[0]?.titulo || '';
+                    formCadastro.elements['foto_adicional_1_src'].value = receita.fotos_adicionais?.[0]?.src || '';
+                    formCadastro.elements['foto_adicional_2_titulo'].value = receita.fotos_adicionais?.[1]?.titulo || '';
+                    formCadastro.elements['foto_adicional_2_src'].value = receita.fotos_adicionais?.[1]?.src || '';
+
+
+                    editandoId = receitaId; // Define o ID para o modo de edição
+                    formCadastro.querySelector('button[type="submit"]').textContent = 'Salvar Alterações';
+                    window.scrollTo(0, 0); // Rola para o topo da página para ver o formulário
+
+                } catch (error) {
+                    console.error('Erro ao carregar receita para edição:', error);
+                    alert('Não foi possível carregar a receita para edição.');
+                }
+
+            } else if (target.classList.contains('btn-delete') && receitaId) {
+                // Ação de Excluir
+                if (confirm(`Tem certeza que deseja excluir a receita com ID ${receitaId}?`)) {
+                    try {
+                        const response = await fetch(`${API_URL}/${receitaId}`, {
+                            method: 'DELETE',
+                        });
+
+                        if (!response.ok) {
+                            throw new Error(`Erro HTTP! status: ${response.status}`);
+                        }
+                        alert(`Receita com ID ${receitaId} excluída com sucesso!`);
+                        await carregarReceitas(); // Recarrega a lista
+                    } catch (error) {
+                        console.error('Erro ao excluir receita:', error);
+                        alert('Ocorreu um erro ao excluir a receita.');
+                    }
+                }
+            }
+        });
+
+
+        // Carrega as receitas iniciais ao carregar a página
+        carregarReceitas();
+    });
+</script>
 </html>

@@ -294,6 +294,24 @@
       "imagem_principal": "imagens/mousse_maracuja.jpg",
       "fotos_adicionais": [],
       "id": 9
+    },
+    {
+      "nome": "Parmegiana",
+      "descricao_breve": "Frango empanado e frito com queijo e molho de tomate",
+      "ingredientes": [
+        "Frango",
+        "Farinha",
+        "Queijo",
+        "Molho de tomate"
+      ],
+      "preparo": "Empane o frango\nFrite o frango\nColoque queijo por cima junto com molho de tomate",
+      "tempo_preparo": "45 minutos",
+      "rendimento": "8 porções",
+      "categoria": "Massas",
+      "destaque": false,
+      "imagem_principal": "",
+      "fotos_adicionais": [],
+      "id": 10
     }
   ]
 }

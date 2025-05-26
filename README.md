@@ -24,7 +24,7 @@ Nesta atividade, você irá completar o projeto anterior permitindo cadastrar e 
 **Print da aba NETWORK com requisições Fetch/XHR de POST**
 
 <<  COLOQUE A IMAGEM AQUI >>
-
+![alt text](NETWORK.jpg)
 ## **Orientações Gerais**
 
 Nesse projeto você vai encontrar a seguinte estrutura base:
